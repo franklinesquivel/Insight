@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @authors = [new Programmer("Franklin Esquivel"), new Programmer("Leonardo López"];
+ * @authors = [new Programmer("Franklin Esquivel"), new Programmer("Leonardo López")];
  */
 public class Student extends Person {
     private String id; //Propiedad: + Carnet

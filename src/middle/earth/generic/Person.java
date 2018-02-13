@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @authors = [new Programmer("Franklin Esquivel"), new Programmer("Leonardo López"];
+ * @authors = [new Programmer("Franklin Esquivel"), new Programmer("Leonardo López")];
  */
 public class Person {
     private String name; //Propiedad: + Nombre

@@ -7,7 +7,7 @@ package middle.earth.academic;
 
 /**
  *
- * @authors = [new Programmer("Franklin Esquivel"), new Programmer("Leonardo López"];
+ * @authors = [new Programmer("Franklin Esquivel"), new Programmer("Leonardo López")];
  */
 public class Subject {
     private String name; //Propiedad: + Nombre
