@@ -34,7 +34,7 @@ public class Main {
     public static void showStudents(){
         System.out.println("|------------------------------------------");
         Main.STUDENTS.forEach((_s) -> {
-            System.out.println("\n|\t* Carnet: " + _s.getId() + "\n|\t* Nombre: " + _s.getName() + "\n|\t* Fecha de nacimiento: " + new SimpleDateFormat("yyyy-MM-dd").format(_s.getBirthdate()) + "\n\n > ");
+            System.out.println("\n|\t* Carnet: " + _s.getId() + "\n|\t* Nombre: " + _s.getName() + "\n|\t* Fecha de nacimiento: " + new SimpleDateFormat("dd-MM-yyyy").format(_s.getBirthdate()) + "\n\n > ");
         });
     }
     
@@ -94,8 +94,8 @@ public class Main {
     
     public static void showInfo(Student student){
         System.out.println("\n\t INFORMACIÓN ESTUDIANTE");
-        System.out.println(" - Código: "+student.getId());
-        System.out.println(" - Nombre: "+student.getName());
-        System.out.println(" - Fecha de nacimiento: "+student.getBirthdate());
+        System.out.println(" - Código: " + student.getId());
+        System.out.println(" - Nombre: " + student.getName());
+        System.out.println(" - Fecha de nacimiento: " +  new SimpleDateFormat("dd-MM-yyyy").format(student.getBirthdate()));
     }
 }
