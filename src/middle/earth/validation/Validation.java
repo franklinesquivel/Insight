@@ -85,6 +85,33 @@ public class Validation {
         return auxDbl;
     }
     
+    public static int valInt(String msg, String title){
+        String aux;
+        int auxInt = 0;
+        boolean flag = true;
+        
+        while(flag) {
+            aux = JOptionPane.showInputDialog(null, msg, title, JOptionPane.INFORMATION_MESSAGE);
+            
+            if(aux.trim().length() == 0){
+                JOptionPane.showMessageDialog(null, "Ingrese un valor válido!", "Error", JOptionPane.ERROR_MESSAGE);
+            }else{
+                try{
+                    flag = false;
+                    auxInt = Integer.parseInt(aux);
+                }catch(NumberFormatException e){
+                    System.out.println(e.getMessage());
+                    flag = true;
+                }
+                
+                if(flag){
+                    JOptionPane.showMessageDialog(null, "Ingrese un valor válido!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+        return auxInt;
+    }
+    
     public static Date valDate(String msg, String title) throws ParseException{
         String aux;
         Date auxDate = null;
