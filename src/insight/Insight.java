@@ -53,36 +53,36 @@ public class Insight {
                         int uv = Validation.valInt("Ingrese las unidades valorativas", "UV");
                         Main.addSubject(Main.selectStudent(),  new Subject(name, grade, uv));
                     }else{
-                        System.out.println("______________________________________________________________");
+                        System.out.println("|-------------------------------------------------------------");
                         System.out.println("|                Favor agregar estudiantes                   |");
-                        System.out.println("|____________________________________________________________|");
+                        System.out.println("|-------------------------------------------------------------");
                     }
                     break;
                 case "C": //Mostrar CUM según alumno
                     if(Main.isStudentEmpty()){ //Mostramos un JOptionPane con la lista de estudiantes
-                        
+                        Main.showCum(Main.selectStudent());
                     }else{
-                        System.out.println("______________________________________________________________");
+                        System.out.println("|-------------------------------------------------------------");
                         System.out.println("|                Favor agregar estudiantes                   |");
-                        System.out.println("|____________________________________________________________|");
+                        System.out.println("|-------------------------------------------------------------");
                     }
                     break;
                 case "D": //Mostrar Materias aprobadas según alumno
                     if(Main.isStudentEmpty()){ //Mostramos un JOptionPane con la lista de estudiantes
-                        Main.showSubjectsAprroved(Main.selectStudent());
+                        Main.showSubjectsAproved(Main.selectStudent());
                     }else{
-                        System.out.println("______________________________________________________________");
-                        System.out.println("|                Favor agregar estudiantes                   |");
-                        System.out.println("|____________________________________________________________|");
+                        System.out.println("|-------------------------------------------------------------");
+                        System.out.println("|                Favor agregar estudiantes                    |");
+                        System.out.println("|-------------------------------------------------------------");
                     }
                     break;
                 case "E": //Mostrar todas las materias según alumno
                     if(Main.isStudentEmpty()){ //Mostramos un JOptionPane con la lista de estudiantes
                         Main.showSubjects(Main.selectStudent());
                     }else{
-                        System.out.println("______________________________________________________________");
+                        System.out.println("|-------------------------------------------------------------");
                         System.out.println("|                Favor agregar estudiantes                   |");
-                        System.out.println("|____________________________________________________________|");
+                        System.out.println("|-------------------------------------------------------------");
                     }
                     break;
                 case "F":

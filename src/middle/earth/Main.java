@@ -39,7 +39,7 @@ public class Main {
         student.addSubject(subject);
     }
     
-    public static void showSubjectsAprroved(Student student){
+    public static void showSubjectsAproved(Student student){
         student.showApproved();
     }
     
