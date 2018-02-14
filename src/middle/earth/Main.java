@@ -25,9 +25,9 @@ public class Main {
         subjects.add(new Subject("Quimica", 8, 4));
         subjects.add(new Subject("Algebra", 7, 3));
         subjects.add(new Subject("Matemática 2", 9, 4));
-        STUDENTS.add(new Student("EG171989",subjects , "Franklin Esquivel", new Date(1998, 9, 23)));
-        STUDENTS.add(new Student("LC171998", subjects, "Leonardo López", new Date(1999, 4, 9)));
-        STUDENTS.add(new Student("LT171979", subjects, "Diego Lemus", new Date(1999, 4, 7)));
+        STUDENTS.add(new Student("EG171989",subjects , "Franklin Esquivel", new Date(98, 9, 23)));
+        STUDENTS.add(new Student("LC171998", subjects, "Leonardo López", new Date(99, 4, 9)));
+        STUDENTS.add(new Student("LT171979", subjects, "Diego Lemus", new Date(99, 4, 7)));
     }
     
     //Método para mostrar a todos los estudiantes registrados

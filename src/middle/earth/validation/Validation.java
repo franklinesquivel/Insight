@@ -133,6 +133,12 @@ public class Validation {
                 if(flag){
                     JOptionPane.showMessageDialog(null, "Ingrese un valor válido!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
+                
+                if(new Date().before(auxDate)){
+                    JOptionPane.showMessageDialog(null, "La fecha no puede ser mayor a la actual!", "Error", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    flag = true;
+                }
             }
         }
         
