@@ -42,8 +42,15 @@ public class Main {
         return STUDENTS;
     }
     
-    public static void addSubject(Student student, Subject subject){
-        student.addSubject(subject);
+    public static void addSubject(Student student){
+        //Obtenemos los datos de la materia a ingresar
+        String name = Validation.valStr("Ingrese nombre de la materia", "Nombre");
+        Double grade;
+        do{
+            grade = Validation.valDbl("Ingrese la nota obtenida", "Nota");
+        }while(grade < 0 || grade >10);
+        int uv = Validation.valInt("Ingrese las unidades valorativas", "UV");
+        student.addSubject(new Subject(name, grade, uv));
     }
     
     public static void showSubjectsApproved(Student student){
@@ -83,5 +90,12 @@ public class Main {
     
     public static void showSubjects(Student student){ //Mostramos las materias de un estudiante
         student.showSubjects();
+    }
+    
+    public static void showInfo(Student student){
+        System.out.println("\n\t INFORMACIÓN ESTUDIANTE");
+        System.out.println(" - Código: "+student.getId());
+        System.out.println(" - Nombre: "+student.getName());
+        System.out.println(" - Fecha de nacimiento: "+student.getBirthdate());
     }
 }

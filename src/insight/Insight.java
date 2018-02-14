@@ -20,7 +20,7 @@ public class Insight {
         boolean replay = true;
         Main.addStudentDefault(); //Agregamos los alumnos por defecto
         while(replay){
-            String opc = JOptionPane.showInputDialog("Menú \n A. Agregar Alumno \n B. Registrar Materia \n C. Mostrar CUM \n D. Mostrar Materias Aprobadas \n E. Mostrar todas las materias \n F. Salir");
+            String opc = JOptionPane.showInputDialog("Menú \n A. Agregar Alumno \n B. Registrar Materia \n C. Mostrar CUM \n D. Mostrar Materias Aprobadas \n E. Mostrar todas las materias \n F. Ver Información \n G. Salir");
         
             switch(opc.toUpperCase()){
                 case "A": //Ingresar Alumno
@@ -34,15 +34,8 @@ public class Insight {
                     break;
                 case "B": //Ingresar materia
                     if(Main.isStudentEmpty()){ //Mostramos un JOptionPane con la lista de estudiantes
-                        
-                        //Obtenemos los datos de la materia a ingresar
-                        String name = Validation.valStr("Ingrese nombre de la materia", "Nombre");
-                        Double grade;
-                        do{
-                            grade = Validation.valDbl("Ingrese la nota obtenida", "Nota");
-                        }while(grade < 0 || grade >10);
-                        int uv = Validation.valInt("Ingrese las unidades valorativas", "UV");
-                        Main.addSubject(Main.selectStudent(),  new Subject(name, grade, uv));
+                        Main.addSubject(Main.selectStudent());
+                        JOptionPane.showMessageDialog(null, "Materia registrada éxitosamente!", "Insight", JOptionPane.INFORMATION_MESSAGE);
                     }else{
                         System.out.println("|-------------------------------------------------------------");
                         System.out.println("|                Favor agregar estudiantes                   |");
@@ -76,7 +69,16 @@ public class Insight {
                         System.out.println("|-------------------------------------------------------------");
                     }
                     break;
-                case "F":
+                case "F": //Ver información estudiante
+                    if(Main.isStudentEmpty()){ //Mostramos un JOptionPane con la lista de estudiantes
+                        Main.showInfo(Main.selectStudent());
+                    }else{
+                        System.out.println("|-------------------------------------------------------------");
+                        System.out.println("|                Favor agregar estudiantes                   |");
+                        System.out.println("|-------------------------------------------------------------");
+                    }
+                    break;
+                case "G":
                     replay = false;
                     break;
                 default:
