@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package insight;
 
 import java.text.ParseException;
@@ -20,13 +15,9 @@ import middle.earth.validation.Validation;
  * @authors = [new Programmer("Franklin Esquivel"), new Programmer("Leonardo López")];
  */
 public class Insight {
-
-    /**
-     * @param args the command line arguments
-     * @throws java.text.ParseException
-     */
+    
     public static void main(String[] args) throws ParseException {
-        Boolean replay = true;
+        boolean replay = true;
         Main.addStudentDefault(); //Agregamos los alumnos por defecto
         while(replay){
             String opc = JOptionPane.showInputDialog("Menú \n A. Agregar Alumno \n B. Registrar Materia \n C. Mostrar CUM \n D. Mostrar Materias Aprobadas \n E. Mostrar todas las materias \n F. Salir");
@@ -40,7 +31,6 @@ public class Insight {
                     
                     Main.addStudent(new Student(auxId, subjects, auxName, birthdate));
                     JOptionPane.showMessageDialog(null, "El estudiante ha sido registrado éxitosamente!", "Registro completo", JOptionPane.INFORMATION_MESSAGE);
-                    Main.showStudents();
                     break;
                 case "B": //Ingresar materia
                     if(Main.isStudentEmpty()){ //Mostramos un JOptionPane con la lista de estudiantes
@@ -70,7 +60,7 @@ public class Insight {
                     break;
                 case "D": //Mostrar Materias aprobadas según alumno
                     if(Main.isStudentEmpty()){ //Mostramos un JOptionPane con la lista de estudiantes
-                        Main.showSubjectsAproved(Main.selectStudent());
+                        Main.showSubjectsApproved(Main.selectStudent());
                     }else{
                         System.out.println("|-------------------------------------------------------------");
                         System.out.println("|                Favor agregar estudiantes                    |");

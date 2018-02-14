@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package middle.earth.academic;
 
 import java.util.Date;
 import middle.earth.generic.Person;
 import java.util.List;
+import middle.earth.validation.Validation;
 
 /**
  *
@@ -57,7 +53,7 @@ public class Student extends Person {
         for(Subject _s : this.subjects){
             if(_s.isApproved()){ //Sí la materia fue aprobada.
                 sigmaVus += _s.getVu();
-                sigmaGrades += _s.getGrade();
+                sigmaGrades += _s.getGrade() * _s.getVu();
             }
         }
         
@@ -65,23 +61,46 @@ public class Student extends Person {
     }
     
     //Método para mostrar las materias que el estudiante aprobó
-    public void showApproved(){
+    public void showApprovedSubjects(){
         if(this.subjects.size() > 0){
             int c = 0;
-            System.out.println("|----------------------------------------------------");
+            System.out.println("\n|------------------------------------------------------");
+            System.out.println("|              MATERIAS APROBADAS de " + this.getName() + ":");
             for(Subject _s : this.subjects){
                 if(_s.isApproved()){ //Sí la materia fue aprobada
-                    System.out.println("| \t * " + _s.getName() + "");
+                    System.out.println("| \t * Nombre: " + _s.getName());
+                    System.out.println("| \t * UV's: " + _s.getVu());
+                    System.out.println("| \t * Nota: " + Validation.round(_s.getGrade(), 2));
+                    System.out.println("|");
                 }else{
                     c++;
                 }
-                
                 //Mensaje a mostrar sí todas las materias que el estudiante cursa fueron desaprobadas
-                System.out.println(c == this.subjects.size() ? "\t\t - El estudiante no posee ninguna materia aprobada!" : "");
+                System.out.print(c == this.subjects.size() ? "\t\t > El estudiante no posee ninguna materia aprobada!" : "");   
             }
+            System.out.println("|------------------------------------------------------");
         }else{
             //Mensaje a mostrar sí el estudiante no posee materias registradas
-            System.out.println("El estudiante no cuenta con registros de materias!");
+            System.out.println("\t\t > El estudiante no cuenta con registros de materias!");
+        }
+    }
+    
+    //Método para mostrar las materias que el estudiante aprobó
+    public void showSubjects(){
+        if(this.subjects.size() > 0){
+            System.out.println("\n|------------------------------------------------------");
+            System.out.println("|              MATERIAS de " + this.getName() + ":");
+            this.subjects.forEach((_s) -> {
+                System.out.println("| \t * Nombre: " + _s.getName());
+                System.out.println("| \t * UV's: " + _s.getVu());
+                System.out.println("| \t * Nota: " + Validation.round(_s.getGrade(), 2));
+                System.out.println("| \t * Aprobada: " + (_s.isApproved() ? "Si" : "No"));
+                System.out.println("|");
+            });
+            System.out.println("|----------------------------------------------------");
+        }else{
+            //Mensaje a mostrar sí el estudiante no posee materias registradas
+            System.out.println("\t\t > El estudiante no cuenta con registros de materias!");
         }
     }
 }
