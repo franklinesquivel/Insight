@@ -27,6 +27,7 @@ public class Insight {
      */
     public static void main(String[] args) throws ParseException {
         Boolean replay = true;
+        Main.addStudentDefault(); //Agregamos los alumnos por defecto
         while(replay){
             String opc = JOptionPane.showInputDialog("Menú \n A. Agregar Alumno \n B. Registrar Materia \n C. Mostrar CUM \n D. Mostrar Materias Aprobadas \n E. Mostrar todas las materias \n F. Salir");
         

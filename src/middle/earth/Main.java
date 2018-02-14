@@ -7,6 +7,7 @@ package middle.earth;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import middle.earth.academic.Student;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -21,6 +22,16 @@ public class Main {
     //Método para añadir un estudiante
     public static void addStudent(Student _s){
         Main.students.add(_s);
+    }
+    
+    public static void addStudentDefault(){
+        List<Subject> subjects = new ArrayList();
+        subjects.add(new Subject("Quimica", 8, 4));
+        subjects.add(new Subject("Algebra", 7, 3));
+        subjects.add(new Subject("Matemática 2", 9, 4));
+        students.add(new Student("EG171989",subjects , "Franklin Esquivel", new Date(1998, 9, 23)));
+        students.add(new Student("LC171998", subjects, "Leonardo López", new Date(1999, 4, 9)));
+        students.add(new Student("LT171979", subjects, "Diego Lemus", new Date(1999, 4, 7)));
     }
     
     //Método para mostrar a todos los estudiantes registrados
@@ -78,8 +89,7 @@ public class Main {
         System.out.println("|------------------------------------------");
         student.getSubjects().forEach((subject) ->{
             String state = subject.isApproved() ? "Si" : "No";
-            
-            System.out.println(" -Nombre: "+subject.getName());
+            System.out.println("- Nombre: "+subject.getName());
             System.out.println("- Nota: "+subject.getGrade());
             System.out.println("- UV: "+subject.getVu());
             System.out.println("- Aprobada: "+ state);

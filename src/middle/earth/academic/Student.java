@@ -71,7 +71,7 @@ public class Student extends Person {
             System.out.println("|----------------------------------------------------");
             for(Subject _s : this.subjects){
                 if(_s.isApproved()){ //Sí la materia fue aprobada
-                    System.out.println("| \t * " + _s.getName() + "\n");
+                    System.out.println("| \t * " + _s.getName() + "");
                 }else{
                     c++;
                 }
